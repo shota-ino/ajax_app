@@ -3,9 +3,15 @@
 <%# ↑↓newとcreateファイル消してメモ投稿のフォームがなくなってしまった為書き換え %>
 <h1>AjaxApp</h1>
 <%= form_with url:  "/posts", method: :post,id: "form" do |form| %>
-  <%= form.text_field :content %>
+  <%= form.text_field :content , id: "content" %>
   <%= form.submit '投稿する' , id: "submit" %>
+  <%# #getElementByIdを用いて「投稿する」↑ボタンの情報を取得 %>
 <% end %>
+
+<%# ↓投稿後にメモを追加する要素として %>
+<div id="list">
+</div>
+
 
 <% @posts.each do |post| %>
   <%# <%= post.content %>
