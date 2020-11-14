@@ -54,3 +54,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'pry-rails'
+
+# 静的アセットファイルやログの保存先をHeroku用に微調整してくれるGem
+        # 本番環境のみで使用されるように指定 
+group :production do
+  gem 'rails_12factor'
+end
